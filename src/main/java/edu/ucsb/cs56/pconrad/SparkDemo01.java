@@ -26,7 +26,10 @@ public class SparkDemo01 {
 		spark.Spark.get("/nihao", (req, res) -> "<b>Ni Hao</b>\n");
 
 		spark.Spark.get("/hola", (req, res) -> "<b>¡Hola!</b>\n");
-		spark.Spark.get("/", (req, res) -> "<h1>Yo</h1>\n");
+                String html = "<h1><a href='/hello'>Hello</a> World!</h1>\n" +
+                    "<p>This web app is powered by \n" +
+                    "<a href='https://github.com/MichaelZyh/sparkjava-01'>this github repo</a></p>\n";
+		spark.Spark.get("/", (req, res) -> html);
 
 	}
 	
